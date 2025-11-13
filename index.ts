@@ -35,17 +35,17 @@ app.use(
       "GET /api/mint": { 
         price: "$1.5", 
         network: "base",
-   
+        config: { description: "Mint 1 x402y00ts!" }
       },
       "GET /api/mint-10": { 
         price: "$15", 
         network: "base",
-  
+        config: { description: "Mint 10 x402y00ts!" }
       },
       "GET /api/mint-20": { 
         price: "$30", 
         network: "base",
-      
+        config: { description: "Mint 20 x402y00ts!" }
       },
       "GET /minted": {
         price: "$0.01",
