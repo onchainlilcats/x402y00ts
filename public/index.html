@@ -1,122 +1,295 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>x402y00ts — NFT Mint</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+   <title>x402y00ts</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://i2c.seadn.io/base/0x89d1441d602e14059f51b61906b98b10a6596a82/a5cd2dbb8a84d9fc407637c2e53969/48a5cd2dbb8a84d9fc407637c2e53969.png?w=1000" />
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
   <!-- Open Graph / SEO -->
-  <meta property="og:title" content="x402y00ts — NFT Mint" />
-  <meta property="og:description" content="Mint your exclusive x402y00ts NFT — powered by x402 Pay. 10,000 total supply. Price: 1.5 USDC." />
+  <meta property="og:title" content="x402y00ts" />
+  <meta property="og:description" content="Mint your exclusive x402y00ts NFT — powered by x402 Pay. 10,000 total supply. Price: 0.5 USDC." />
   <meta property="og:image" content="https://i2c.seadn.io/base/0x89d1441d602e14059f51b61906b98b10a6596a82/a5cd2dbb8a84d9fc407637c2e53969/48a5cd2dbb8a84d9fc407637c2e53969.png?w=1000" />
   <meta property="og:url" content="https://x402y00ts.vercel.app/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="description" content="Mint your x402y00ts NFT via x402 Pay — 10,000 total supply. Price: 1.5 USDC." />
-
+  <meta name="description" content="Mint your x402y00ts NFT via x402 Pay — 10,000 total supply. Price: 0.5 USDC." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:#0f1724;
-      --card:#0b1220;
-      --accent:#7cf4d4;
-      --muted:#9aa7b2;
+      --bg: #14111c;
+      --card: #212738;
+      --accent: #F7BF21;
+      --danger: #ff5b5b;
+      --muted: #b4b8c7;
+      --fomo: #F7BF21;
+      --success: #34e17a;
+      --font-main: 'Inter', system-ui;
+      --memebg: url('https://media.tenor.com/fnbBKITG-awAAAAC/haha-funny-meme.gif');
     }
-    body {font-family:Inter,system-ui; margin:0; background:linear-gradient(180deg,var(--bg),#07101a); color:#e6f0f2;}
-    .container {max-width:1100px; margin:0 auto; padding:32px;}
-    header {display:flex;align-items:center;justify-content:space-between;}
-    .brand {display:flex;align-items:center;gap:12px;}
-    .brand img {width:56px;height:56px;border-radius:12px;}
-    h1 {font-size:22px;margin:0;}
-    .btn {background:linear-gradient(90deg,var(--accent),#55d6c1);color:#021114;font-weight:700;padding:12px 18px;border-radius:10px;text-decoration:none;display:inline-block;cursor:pointer;}
-    .muted {color:var(--muted);font-size:13px;}
-    .hero {display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:40px 0;}
-    .card {background:var(--card);border-radius:14px;padding:24px;}
-    .stats {display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;}
-    .stat {background:#07121b;padding:8px 12px;border-radius:10px;text-align:center;flex:1;min-width:100px;}
-    .stat b {display:block;}
-    .progress-container {background:#07121b;border-radius:10px;overflow:hidden;height:16px;margin-top:16px;}
-    .progress-bar {background:linear-gradient(90deg,var(--accent),#55d6c1);height:100%;width:0%;transition:width 1s ease-in-out;}
-    footer {text-align:center;color:var(--muted);padding:24px 0;}
-
+    body {
+      margin:0;
+      font-family: var(--font-main);
+      background: linear-gradient(180deg,var(--bg),#2a223f 100%), var(--memebg);
+      color: #ffeedd;
+      min-height: 100vh;
+    }
+    .container {max-width: 900px;margin: 0 auto; padding:32px;}
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+    }
+    .brand img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+    h1 {
+      font-size: 2.2em;
+      margin: 0;
+      font-weight: 800;
+      text-shadow: 1px 1px 0 var(--accent), 0 2px 6px #640d7b36;
+    }
+    .muted {color: var(--muted);font-size: 15px;}
+    .top-buttons {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn {
+      background: linear-gradient(90deg,var(--accent),var(--success));
+      color: #212738;
+      font-weight: 900;
+      padding: 16px 18px;
+      border-radius: 10px;
+      font-size: 1.05em;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      box-shadow: 0 0 8px var(--accent);
+      transition: transform 0.1s;
+      border: none;
+      outline: none;
+    }
+    .btn:hover {
+      transform: scale(1.07);
+      background: linear-gradient(90deg,var(--danger),var(--accent));
+      color: #ffeedd;
+    }
+    .btn.opensea {
+      background: linear-gradient(90deg,#2081e2,#41e7f4);
+      color: #140b1f;
+    }
+    .btn.basescan {
+      background: linear-gradient(90deg,#e9c46a,#00ffe5);
+      color: #140b1f;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 23px;
+      align-items: center;
+      padding: 28px 0;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 15px;
+      padding: 34px 28px;
+      box-shadow: 0 3px 35px #eb4fcd15;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .big-numbers {
+      font-size: 3em;
+      font-weight: 900;
+      letter-spacing: .03em;
+      margin: 8px 0 0 0;
+      color: var(--success);
+    }
+    .stats {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+    .stat {
+      background: #1c1931;
+      padding: 12px 20px;
+      border-radius: 11px;
+      font-size: 1.05em;
+      box-shadow: 0 0 6px var(--muted);
+      min-width:120px;
+    }
+    .stat b {
+      display:block;
+      font-size:1.55em;
+      margin-top:3px;
+      color: var(--accent);
+    }
+    .stat.danger b { color: var(--danger);}
+    .stat.fomo {
+      background: var(--fomo);
+      color: #161220;
+      font-weight: 900;
+      animation: shake 1s infinite alternate;
+    }
+    @keyframes shake {
+      to {transform: rotate(2.5deg);}
+    }
+    .progress-container {
+      background: #130d22;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 22px;
+      margin-top: 28px;
+      box-shadow:0 0 12px var(--accent);
+    }
+    .progress-bar {
+      background: linear-gradient(90deg,var(--accent),var(--danger),var(--success));
+      height:100%;width:0%;transition:width 1.6s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 32px 0;
+      font-size: 1.1em;
+      letter-spacing: .05em;
+    }
     /* Accordion */
     .accordion {margin-top:40px;}
-    .accordion-item {background:var(--card);border-radius:10px;margin-bottom:10px;overflow:hidden;}
-    .accordion-header {padding:14px 18px;cursor:pointer;font-weight:600;display:flex;justify-content:space-between;align-items:center;}
-    .accordion-header:hover {background:#132030;}
-    .accordion-content {max-height:0;overflow:hidden;transition:max-height 0.4s ease;padding:0 18px;}
-    .accordion-content p {color:var(--muted);font-size:14px;line-height:1.6;}
-    .accordion-item.active .accordion-content {max-height:200px;padding:14px 18px;}
+    .accordion-item {background:var(--card);border-radius:12px;margin-bottom:16px;overflow:hidden;}
+    .accordion-header {
+      padding:17px 22px;
+      cursor:pointer;
+      font-weight:900;
+      display:flex;justify-content:space-between;align-items:center;
+      font-size:1.08em;
+      letter-spacing:.04em
+    }
+    .accordion-header span {font-size:1.3em;}
+    .accordion-header:hover {background:#2b1e31;}
+    .accordion-content {
+      max-height:0;overflow:hidden;transition:max-height 0.6s cubic-bezier(.68,-0.55,.27,1.55);
+      padding:0 22px;
+    }
+    .accordion-content p {color:var(--muted);font-size:15px;line-height:1.6;}
+    .accordion-item.active .accordion-content {max-height:200px;padding:17px 22px;}
+    /* Meme Badge */
+    .badge {
+      display:inline-block;
+      background:var(--accent);
+      color:#321c3a;
+      font-weight:900;
+      font-size:1.2em;
+      border-radius:22px;
+      padding:8px 20px;
+      margin:16px auto 0 auto;
+      box-shadow:0 0 9px #ff5b5b80;
+    }
+    /* Responsive */
+    @media (max-width:700px) {
+      .hero {grid-template-columns:1fr;}
+      .container {padding:12px;}
+      .top-buttons {flex-direction: column; gap:8px;}
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="brand">
-        <img src="https://i2c.seadn.io/base/0x89d1441d602e14059f51b61906b98b10a6596a82/a5cd2dbb8a84d9fc407637c2e53969/48a5cd2dbb8a84d9fc407637c2e53969.png?w=1000" alt="x402y00ts" />
+        <img src="https://i2c.seadn.io/base/0x89d1441d602e14059f51b61906b98b10a6596a82/a5cd2dbb8a84d9fc407637c2e53969/48a5cd2dbb8a84d9fc407637c2e53969.png?w=1000" alt="x402y00ts"/>
         <div>
-          <h1>x402y00ts</h1>
-          <div class="muted">x402 Pay Mint</div>
+          <h1>x402y00ts 🚀</h1>
+          <div class="muted">Meme Mint | Base Network</div>
         </div>
       </div>
-      <a href="https://www.x402scan.com/recipient/0x3a4260691095e920aeb3c9a8c62892272246a3e3/resources" class="btn" target="_blank">Mint Now</a>
+      <div class="top-buttons">
+        <a href="https://www.x402scan.com/recipient/0x3a4260691095e920aeb3c9a8c62892272246a3e3/resources" class="btn" target="_blank">Mint Now 💸</a>
+        <a href="https://opensea.io/assets/base/0x89d1441d602e14059f51b61906b98b10a6596a82" class="btn opensea" target="_blank">OpenSea</a>
+        <a href="https://basescan.org/address/0x89d1441d602e14059f51b61906b98b10a6596a82" class="btn basescan" target="_blank">Basescan</a>
+      </div>
     </header>
-
     <section class="hero">
       <div class="card">
-        <h2>Mint your x402y00ts NFT</h2>
-        <p class="muted">Total Supply: <strong>10000</strong><br>Price: <strong>0.5 USDC</strong></p>
-        <a href="https://www.x402scan.com/recipient/0x3a4260691095e920aeb3c9a8c62892272246a3e3/resources" target="_blank" class="btn">Mint via x402 Pay</a>
+        <h2>Mint Your Meme NFT<br>
+          <span style="font-size:1.2em;">😎💰 Ride the FOMO, anon!</span>
+        </h2>
+        <div class="badge" id="statusBadge">10,000 NFTs in stock!</div>
+        <div class="big-numbers" id="remainingBig">10,000 / 10,000</div>
+        <p class="muted">Mint Price: <strong>0.5 USDC</strong></p>
+        <a href="https://www.x402scan.com/recipient/0x3a4260691095e920aeb3c9a8c62892272246a3e3/resources" target="_blank" class="btn">Mint via x402 Pay 🚀</a>
         <div class="stats">
-          <div class="stat"><span class="muted">Total</span><b>10000</b></div>
           <div class="stat"><span class="muted">Minted</span><b id="minted">0</b></div>
-          <div class="stat"><span class="muted">Price</span><b>0.5 USDC</b></div>
+          <div class="stat danger"><span class="muted">Left</span><b id="remaining">10000</b></div>
+          <div class="stat fomo"><span>🔥 FOMO Level</span><b id="fomoLevel">0%</b></div>
         </div>
         <div class="progress-container">
           <div id="progressBar" class="progress-bar"></div>
         </div>
       </div>
-      <div class="card" style="text-align:center;">
-        <img src="https://i2c.seadn.io/base/0x89d1441d602e14059f51b61906b98b10a6596a82/a5cd2dbb8a84d9fc407637c2e53969/48a5cd2dbb8a84d9fc407637c2e53969.png?w=1000" alt="preview" style="width:100%;border-radius:12px;">
+      <div class="card">
+        <img src="https://i2c.seadn.io/base/0x89d1441d602e14059f51b61906b98b10a6596a82/a5cd2dbb8a84d9fc407637c2e53969/48a5cd2dbb8a84d9fc407637c2e53969.png?w=1000"
+        alt="Meme NFT Preview" style="width:100%;border-radius:20px;box-shadow:0 0 24px #ff5b5b80;">
+        <p class="muted" style="margin-top:10px;">
+          <span style="font-size:2em;">😺</span><br>
+          “10k memes, infinite vibes!”
+        </p>
       </div>
     </section>
-
     <!-- Accordion Section -->
     <section class="accordion">
       <div class="accordion-item">
-        <div class="accordion-header">What is x402?<span>+</span></div>
+        <div class="accordion-header">What is x402y00ts? <span>😺</span></div>
         <div class="accordion-content">
-          <p>x402 is a decentralized payment layer that enables instant crypto payments directly from smart contracts. The x402y00ts NFT collection is powered by this system — simple, fast, and borderless.</p>
+          <p>x402y00ts is a meme-powered NFT collection living on the Base network. Mintable via x402 Pay contract. 100% vibes, lmao utility. Flex in your wallet, flex on CT.</p>
         </div>
       </div>
       <div class="accordion-item">
-        <div class="accordion-header">Total Supply<span>+</span></div>
+        <div class="accordion-header">How Many? <span>🔢</span></div>
         <div class="accordion-content">
-          <p>The collection includes a total of 10,000 x402y00ts NFTs available for minting.</p>
+          <p>Max supply: <b>10,000</b> NFTs. Once they're gone, they're gone. Mint and make history (or make memes).</p>
         </div>
       </div>
       <div class="accordion-item">
-        <div class="accordion-header">Mint Price<span>+</span></div>
+        <div class="accordion-header">Price Fr/?? <span>💵</span></div>
         <div class="accordion-content">
-          <p>Each x402y00ts NFT costs <strong>0.5 USDC</strong> on the Base network via x402 Pay.</p>
+          <p>Just <strong>0.5 USDC</strong> per mint. Cheaper than your daily coffee, lasts longer than market pump.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Epic Community? <span>👀</span></div>
+        <div class="accordion-content">
+          <p>Every minter becomes official meme degenerate. No roadmap, just pure vibes.</p>
         </div>
       </div>
     </section>
-
     <footer>
-      Made with ♥ for x402y00ts — powered by x402 Pay
+      Made with meme energy for <b>x402y00ts NFT</b> — Powered by <span style="color:var(--accent)">x402 Pay</span>
     </footer>
   </div>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
   <script>
     const CONTRACT_ADDRESS = "0x89d1441d602e14059f51b61906b98b10a6596a82";
     const CONTRACT_ABI = ["function totalSupply() public view returns (uint256)"];
     const TOTAL_SUPPLY = 10000;
+
+    function getFomoLevel(minted) {
+      if (minted < 100) return "😆 0%";
+      if (minted < 1000) return "😮 10%";
+      if (minted < 5000) return "😱 50%";
+      if (minted < 9000) return "🔥 90%";
+      return "🫨 99%";
+    }
 
     async function updateMintedCount() {
       try {
@@ -124,14 +297,20 @@
         const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, provider);
         const totalMinted = await contract.totalSupply();
         document.getElementById('minted').textContent = totalMinted.toString();
+        const remaining = Math.max(TOTAL_SUPPLY - Number(totalMinted), 0);
+        document.getElementById('remaining').textContent = remaining;
+        document.getElementById('remainingBig').textContent = remaining + " / " + TOTAL_SUPPLY;
         const percent = Math.min((Number(totalMinted) / TOTAL_SUPPLY) * 100, 100);
         document.getElementById('progressBar').style.width = percent + '%';
+        document.getElementById('statusBadge').textContent = remaining > 0
+          ? `${remaining} NFTs left!`
+          : `🥳 SOLD OUT! Total meme achieved!`;
+        document.getElementById('fomoLevel').textContent = getFomoLevel(Number(totalMinted));
       } catch (err) {
-        console.log('Error reading totalSupply', err);
+        document.getElementById('statusBadge').textContent = "🥲 Connection Error (meme rug?)";
       }
     }
 
-    // Accordion toggle
     document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', () => {
         const item = header.parentElement;
