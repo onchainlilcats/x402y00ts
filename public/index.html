@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-   <title>x402y00ts</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>x402y00ts</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://i2c.seadn.io/base/0x89d1441d602e14059f51b61906b98b10a6596a82/a5cd2dbb8a84d9fc407637c2e53969/48a5cd2dbb8a84d9fc407637c2e53969.png?w=1000" />
@@ -14,312 +14,985 @@
   <meta property="og:url" content="https://x402y00ts.vercel.app/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="description" content="Mint your x402y00ts NFT via x402 Pay — 10,000 total supply. Price: 0.5 USDC." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #14111c;
-      --card: #212738;
-      --accent: #F7BF21;
-      --danger: #ff5b5b;
-      --muted: #b4b8c7;
-      --fomo: #F7BF21;
-      --success: #34e17a;
-      --font-main: 'Inter', system-ui;
-      --memebg: url('https://media.tenor.com/fnbBKITG-awAAAAC/haha-funny-meme.gif');
-    }
-    body {
-      margin:0;
-      font-family: var(--font-main);
-      background: linear-gradient(180deg,var(--bg),#2a223f 100%), var(--memebg);
-      color: #ffeedd;
-      min-height: 100vh;
-    }
-    .container {max-width: 900px;margin: 0 auto; padding:32px;}
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 17px;
-    }
-    .brand img {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      border: 3px solid var(--accent);
-      box-shadow: 0 0 12px var(--accent);
-    }
-    h1 {
-      font-size: 2.2em;
-      margin: 0;
-      font-weight: 800;
-      text-shadow: 1px 1px 0 var(--accent), 0 2px 6px #640d7b36;
-    }
-    .muted {color: var(--muted);font-size: 15px;}
-    .top-buttons {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-    .btn {
-      background: linear-gradient(90deg,var(--accent),var(--success));
-      color: #212738;
-      font-weight: 900;
-      padding: 16px 18px;
-      border-radius: 10px;
-      font-size: 1.05em;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-      box-shadow: 0 0 8px var(--accent);
-      transition: transform 0.1s;
-      border: none;
-      outline: none;
-    }
-    .btn:hover {
-      transform: scale(1.07);
-      background: linear-gradient(90deg,var(--danger),var(--accent));
-      color: #ffeedd;
-    }
-    .btn.opensea {
-      background: linear-gradient(90deg,#2081e2,#41e7f4);
-      color: #140b1f;
-    }
-    .btn.basescan {
-      background: linear-gradient(90deg,#e9c46a,#00ffe5);
-      color: #140b1f;
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 23px;
-      align-items: center;
-      padding: 28px 0;
-    }
-    .card {
-      background: var(--card);
-      border-radius: 15px;
-      padding: 34px 28px;
-      box-shadow: 0 3px 35px #eb4fcd15;
-      margin-top: 10px;
-      text-align: center;
-    }
-    .big-numbers {
-      font-size: 3em;
-      font-weight: 900;
-      letter-spacing: .03em;
-      margin: 8px 0 0 0;
-      color: var(--success);
-    }
-    .stats {
-      display: flex;
-      gap: 18px;
-      justify-content: center;
-      margin-top: 18px;
-      flex-wrap: wrap;
-    }
-    .stat {
-      background: #1c1931;
-      padding: 12px 20px;
-      border-radius: 11px;
-      font-size: 1.05em;
-      box-shadow: 0 0 6px var(--muted);
-      min-width:120px;
-    }
-    .stat b {
-      display:block;
-      font-size:1.55em;
-      margin-top:3px;
-      color: var(--accent);
-    }
-    .stat.danger b { color: var(--danger);}
-    .stat.fomo {
-      background: var(--fomo);
-      color: #161220;
-      font-weight: 900;
-      animation: shake 1s infinite alternate;
-    }
-    @keyframes shake {
-      to {transform: rotate(2.5deg);}
-    }
-    .progress-container {
-      background: #130d22;
-      border-radius: 12px;
-      overflow: hidden;
-      height: 22px;
-      margin-top: 28px;
-      box-shadow:0 0 12px var(--accent);
-    }
-    .progress-bar {
-      background: linear-gradient(90deg,var(--accent),var(--danger),var(--success));
-      height:100%;width:0%;transition:width 1.6s cubic-bezier(.68,-0.55,.27,1.55);
-    }
-    footer {
-      text-align: center;
-      color: var(--muted);
-      padding: 32px 0;
-      font-size: 1.1em;
-      letter-spacing: .05em;
-    }
-    /* Accordion */
-    .accordion {margin-top:40px;}
-    .accordion-item {background:var(--card);border-radius:12px;margin-bottom:16px;overflow:hidden;}
-    .accordion-header {
-      padding:17px 22px;
-      cursor:pointer;
-      font-weight:900;
-      display:flex;justify-content:space-between;align-items:center;
-      font-size:1.08em;
-      letter-spacing:.04em
-    }
-    .accordion-header span {font-size:1.3em;}
-    .accordion-header:hover {background:#2b1e31;}
-    .accordion-content {
-      max-height:0;overflow:hidden;transition:max-height 0.6s cubic-bezier(.68,-0.55,.27,1.55);
-      padding:0 22px;
-    }
-    .accordion-content p {color:var(--muted);font-size:15px;line-height:1.6;}
-    .accordion-item.active .accordion-content {max-height:200px;padding:17px 22px;}
-    /* Meme Badge */
-    .badge {
-      display:inline-block;
-      background:var(--accent);
-      color:#321c3a;
-      font-weight:900;
-      font-size:1.2em;
-      border-radius:22px;
-      padding:8px 20px;
-      margin:16px auto 0 auto;
-      box-shadow:0 0 9px #ff5b5b80;
-    }
-    /* Responsive */
-    @media (max-width:700px) {
-      .hero {grid-template-columns:1fr;}
-      .container {padding:12px;}
-      .top-buttons {flex-direction: column; gap:8px;}
-    }
-  </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a0f1a;
+            --secondary: #131a2a;
+            --accent: #7cf4d4;
+            --accent-dark: #5ad1b5;
+            --text: #e6f0f2;
+            --text-muted: #8a9bb8;
+            --border: #1e2a44;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --gradient: linear-gradient(135deg, #7cf4d4 0%, #55d6c1 50%, #3ab7a5 100%);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(124, 244, 212, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(124, 244, 212, 0.05) 0%, transparent 20%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 0;
+            position: relative;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand img {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            border: 2px solid var(--accent);
+        }
+
+        .brand-text h1 {
+            font-size: 28px;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
+        }
+
+        .brand-text .tagline {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--gradient);
+            color: #021114;
+            font-weight: 600;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(124, 244, 212, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(124, 244, 212, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: rgba(124, 244, 212, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--text), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .mint-card {
+            background: var(--secondary);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .mint-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .mint-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mint-card h3 i {
+            color: var(--accent);
+        }
+
+        .price-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(124, 244, 212, 0.1);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        .stat {
+            background: rgba(7, 18, 27, 0.7);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .stat:hover {
+            background: rgba(10, 25, 37, 0.9);
+            transform: translateY(-3px);
+        }
+
+        .stat .label {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .stat .value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .progress-container {
+            background: #07121b;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 16px;
+            margin: 24px 0;
+            border: 1px solid var(--border);
+        }
+
+        .progress-bar {
+            background: var(--gradient);
+            height: 100%;
+            width: 0%;
+            transition: width 1s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(255, 255, 255, 0.2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.2) 75%,
+                transparent 75%,
+                transparent
+            );
+            z-index: 1;
+            background-size: 50px 50px;
+            animation: move 2s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+        .nft-preview {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .nft-preview:hover {
+            transform: perspective(1000px) rotateY(0) rotateX(0);
+        }
+
+        .nft-image {
+            width: 100%;
+            display: block;
+            border-radius: 24px;
+        }
+
+        .nft-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient);
+            color: #021114;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 80px 0;
+        }
+
+        .feature {
+            background: var(--secondary);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(124, 244, 212, 0.1);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            color: var(--accent);
+        }
+
+        .feature h3 {
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .feature p {
+            color: var(--text-muted);
+        }
+
+        /* Roadmap Section */
+        .roadmap {
+            margin: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 60px;
+            background: linear-gradient(90deg, var(--text), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--gradient);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background: var(--secondary);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .timeline-content h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .timeline-content p {
+            color: var(--text-muted);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            margin: 80px 0;
+        }
+
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: var(--secondary);
+            border-radius: 16px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            background: rgba(26, 35, 56, 0.5);
+        }
+
+        .accordion-header {
+            padding: 24px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(26, 35, 56, 0.5);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 24px;
+        }
+
+        .accordion-content p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.6;
+            padding-bottom: 24px;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+        }
+
+        .accordion-header span {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+            color: var(--accent);
+        }
+
+        .accordion-item.active .accordion-header span {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(124, 244, 212, 0.1);
+            border-radius: 50%;
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: #021114;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--text-muted);
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 60px 0;
+            }
+            
+            .hero-content h2 {
+                font-size: 36px;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-item:nth-child(even)::after {
+                left: 21px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation for elements */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <img src="https://i2c.seadn.io/base/0x89d1441d602e14059f51b61906b98b10a6596a82/a5cd2dbb8a84d9fc407637c2e53969/48a5cd2dbb8a84d9fc407637c2e53969.png?w=1000" alt="x402y00ts"/>
-        <div>
-          <h1>x402y00ts 🚀</h1>
-          <div class="muted">Meme Mint | Base Network</div>
-        </div>
-      </div>
-      <div class="top-buttons">
-        <a href="https://www.x402scan.com/recipient/0x3a4260691095e920aeb3c9a8c62892272246a3e3/resources" class="btn" target="_blank">Mint Now 💸</a>
-        <a href="https://opensea.io/assets/base/0x89d1441d602e14059f51b61906b98b10a6596a82" class="btn opensea" target="_blank">OpenSea</a>
-        <a href="https://basescan.org/address/0x89d1441d602e14059f51b61906b98b10a6596a82" class="btn basescan" target="_blank">Basescan</a>
-      </div>
-    </header>
-    <section class="hero">
-      <div class="card">
-        <h2>Mint Your Meme NFT<br>
-          <span style="font-size:1.2em;">😎💰 Ride the FOMO, anon!</span>
-        </h2>
-        <div class="badge" id="statusBadge">10,000 NFTs in stock!</div>
-        <div class="big-numbers" id="remainingBig">10,000 / 10,000</div>
-        <p class="muted">Mint Price: <strong>0.5 USDC</strong></p>
-        <a href="https://www.x402scan.com/recipient/0x3a4260691095e920aeb3c9a8c62892272246a3e3/resources" target="_blank" class="btn">Mint via x402 Pay 🚀</a>
-        <div class="stats">
-          <div class="stat"><span class="muted">Minted</span><b id="minted">0</b></div>
-          <div class="stat danger"><span class="muted">Left</span><b id="remaining">10000</b></div>
-          <div class="stat fomo"><span>🔥 FOMO Level</span><b id="fomoLevel">0%</b></div>
-        </div>
-        <div class="progress-container">
-          <div id="progressBar" class="progress-bar"></div>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://i2c.seadn.io/base/0x89d1441d602e14059f51b61906b98b10a6596a82/a5cd2dbb8a84d9fc407637c2e53969/48a5cd2dbb8a84d9fc407637c2e53969.png?w=1000"
-        alt="Meme NFT Preview" style="width:100%;border-radius:20px;box-shadow:0 0 24px #ff5b5b80;">
-        <p class="muted" style="margin-top:10px;">
-          <span style="font-size:2em;">😺</span><br>
-          “10k memes, infinite vibes!”
-        </p>
-      </div>
-    </section>
-    <!-- Accordion Section -->
-    <section class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-header">What is x402y00ts? <span>😺</span></div>
-        <div class="accordion-content">
-          <p>x402y00ts is a meme-powered NFT collection living on the Base network. Mintable via x402 Pay contract. 100% vibes, lmao utility. Flex in your wallet, flex on CT.</p>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header">How Many? <span>🔢</span></div>
-        <div class="accordion-content">
-          <p>Max supply: <b>10,000</b> NFTs. Once they're gone, they're gone. Mint and make history (or make memes).</p>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header">Price Fr/?? <span>💵</span></div>
-        <div class="accordion-content">
-          <p>Just <strong>0.5 USDC</strong> per mint. Cheaper than your daily coffee, lasts longer than market pump.</p>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header">Epic Community? <span>👀</span></div>
-        <div class="accordion-content">
-          <p>Every minter becomes official meme degenerate. No roadmap, just pure vibes.</p>
-        </div>
-      </div>
-    </section>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <img src="https://i2c.seadn.io/base/0x89d1441d602e14059f51b61906b98b10a6596a82/a5cd2dbb8a84d9fc407637c2e53969/48a5cd2dbb8a84d9fc407637c2e53969.png?w=1000" alt="x402y00ts">
+                <div class="brand-text">
+                    <h1>x402y00ts</h1>
+                    <div class="tagline">Premium NFT Collection</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#mint">Mint</a>
+                <a href="#features">Features</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <a href="https://www.x402scan.com/recipient/0x3a4260691095e920aeb3c9a8c62892272246a3e3/resources" class="btn" target="_blank">
+                <i class="fas fa-gem"></i> Mint Now
+            </a>
+			  <a href="https://opensea.io/collection/x402y00ts" class="btn" target="_blank">
+                <i class="fas fa-website"></i> Opensea
+            </a>
+			  <a href="https://basescan.org/address/0x89d1441d602e14059f51b61906b98b10a6596a82" class="btn" target="_blank">
+                <i class="fas fa-website"></i> Basescan
+            </a>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content animate-fadeInUp">
+                <h2>Discover the Future of Digital Collectibles</h2>
+                <p>Join the exclusive x402y00ts NFT collection powered by x402 Pay. Each NFT is a unique digital asset on the Base network with special utility and benefits.</p>
+                <a href="#mint" class="btn">
+                    <i class="fas fa-rocket"></i> Start Minting
+                </a>
+            </div>
+            <div class="nft-preview animate-fadeInUp delay-1">
+                <img src="https://i2c.seadn.io/base/0x89d1441d602e14059f51b61906b98b10a6596a82/a5cd2dbb8a84d9fc407637c2e53969/48a5cd2dbb8a84d9fc407637c2e53969.png?w=1000" alt="x402y00ts NFT" class="nft-image">
+                <div class="nft-badge">Limited Edition</div>
+            </div>
+        </section>
+
+        <section id="mint" class="mint-card animate-fadeInUp delay-2">
+            <h3><i class="fas fa-coins"></i> Mint Your x402y00ts NFT</h3>
+            <div class="price-tag">
+                <i class="fas fa-tag"></i> 0.5 USDC per NFT
+            </div>
+            <p>Secure your exclusive x402y00ts NFT now. Only 10,000 will ever be created.</p>
+            
+            <a href="https://www.x402scan.com/recipient/0x3a4260691095e920aeb3c9a8c62892272246a3e3/resources" target="_blank" class="btn" style="width: 100%; margin: 20px 0;">
+                <i class="fas fa-bolt"></i> Mint via x402 Pay
+            </a>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="label">Total Supply</div>
+                    <div class="value">10,000</div>
+                </div>
+                <div class="stat">
+                    <div class="label">Minted</div>
+                    <div class="value" id="minted">0</div>
+                </div>
+                <div class="stat">
+                    <div class="label">Remaining</div>
+                    <div class="value" id="remaining">10,000</div>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; font-size: 14px; color: var(--text-muted);">
+                <span>0%</span>
+                <span id="progressPercent">0%</span>
+                <span>100%</span>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="feature animate-fadeInUp">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Instant Transactions</h3>
+                <p>Powered by x402 Pay for lightning-fast minting and transfers with minimal gas fees.</p>
+            </div>
+            <div class="feature animate-fadeInUp delay-1">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Secure & Trustless</h3>
+                <p>Built on Base network with decentralized infrastructure and secure smart contracts.</p>
+            </div>
+            <div class="feature animate-fadeInUp delay-2">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Future Utility</h3>
+                <p>Holders get exclusive access to future airdrops, events, and community benefits.</p>
+            </div>
+        </section>
+
+
+
+        <section id="faq" class="faq">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item animate-fadeInUp">
+                    <div class="accordion-header">
+                        What is x402?
+                        <span>+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>x402 is a decentralized payment layer that enables instant crypto payments directly from smart contracts. The x402y00ts NFT collection is powered by this system — simple, fast, and borderless.</p>
+                    </div>
+                </div>
+                <div class="accordion-item animate-fadeInUp delay-1">
+                    <div class="accordion-header">
+                        How do I mint?
+                        <span>+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Simply click the "Mint via x402 Pay" button and follow the instructions. You'll need a Web3 wallet with USDC on the Base network to complete your purchase.</p>
+                    </div>
+                </div>
+                <div class="accordion-item animate-fadeInUp delay-2">
+                    <div class="accordion-header">
+                        What is the total supply?
+                        <span>+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>The collection includes a total of 10,000 x402y00ts NFTs available for minting. Once all are minted, no more will be created.</p>
+                    </div>
+                </div>
+                <div class="accordion-item animate-fadeInUp delay-3">
+                    <div class="accordion-header">
+                        What network is this on?
+                        <span>+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>x402y00ts NFTs are minted on the Base network, a layer-2 solution for Ethereum that offers low fees and fast transactions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <footer>
-      Made with meme energy for <b>x402y00ts NFT</b> — Powered by <span style="color:var(--accent)">x402 Pay</span>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>x402y00ts</h4>
+                    <p>The premium NFT collection powered by x402 Pay technology.</p>
+                    <div class="social-links">
+                        <a href="https://x.com/x402Y00ts"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#mint">Mint NFT</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.x402.org/x402.pdf">Documentation</a></li>
+                        <li><a href="https://basescan.org/address/0x89d1441d602e14059f51b61906b98b10a6596a82">Smart Contract</a></li>
+                        <li><a href="https://www.x402scan.com/recipient/0x3a4260691095e920aeb3c9a8c62892272246a3e3/resources">x402 Pay</a></li>
+                        <li><a href="#">Base Network</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 x402y00ts. All rights reserved. Powered by x402 Pay.</p>
+            </div>
+        </div>
     </footer>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
-  <script>
-    const CONTRACT_ADDRESS = "0x89d1441d602e14059f51b61906b98b10a6596a82";
-    const CONTRACT_ABI = ["function totalSupply() public view returns (uint256)"];
-    const TOTAL_SUPPLY = 10000;
 
-    function getFomoLevel(minted) {
-      if (minted < 100) return "😆 0%";
-      if (minted < 1000) return "😮 10%";
-      if (minted < 5000) return "😱 50%";
-      if (minted < 9000) return "🔥 90%";
-      return "🫨 99%";
-    }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
+    <script>
+        const CONTRACT_ADDRESS = "0x89d1441d602e14059f51b61906b98b10a6596a82";
+        const CONTRACT_ABI = ["function totalSupply() public view returns (uint256)"];
+        const TOTAL_SUPPLY = 10000;
 
-    async function updateMintedCount() {
-      try {
-        const provider = new ethers.JsonRpcProvider("https://mainnet.base.org");
-        const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, provider);
-        const totalMinted = await contract.totalSupply();
-        document.getElementById('minted').textContent = totalMinted.toString();
-        const remaining = Math.max(TOTAL_SUPPLY - Number(totalMinted), 0);
-        document.getElementById('remaining').textContent = remaining;
-        document.getElementById('remainingBig').textContent = remaining + " / " + TOTAL_SUPPLY;
-        const percent = Math.min((Number(totalMinted) / TOTAL_SUPPLY) * 100, 100);
-        document.getElementById('progressBar').style.width = percent + '%';
-        document.getElementById('statusBadge').textContent = remaining > 0
-          ? `${remaining} NFTs left!`
-          : `🥳 SOLD OUT! Total meme achieved!`;
-        document.getElementById('fomoLevel').textContent = getFomoLevel(Number(totalMinted));
-      } catch (err) {
-        document.getElementById('statusBadge').textContent = "🥲 Connection Error (meme rug?)";
-      }
-    }
+        async function updateMintedCount() {
+            try {
+                const provider = new ethers.JsonRpcProvider("https://mainnet.base.org");
+                const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, provider);
+                const totalMinted = await contract.totalSupply();
+                document.getElementById('minted').textContent = totalMinted.toString();
+                
+                const remaining = TOTAL_SUPPLY - Number(totalMinted);
+                document.getElementById('remaining').textContent = remaining.toString();
+                
+                const percent = Math.min((Number(totalMinted) / TOTAL_SUPPLY) * 100, 100);
+                document.getElementById('progressBar').style.width = percent + '%';
+                document.getElementById('progressPercent').textContent = percent.toFixed(1) + '%';
+            } catch (err) {
+                console.log('Error reading totalSupply', err);
+            }
+        }
 
-    document.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const item = header.parentElement;
-        item.classList.toggle('active');
-      });
-    });
+        // Accordion functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all accordion items
+                document.querySelectorAll('.accordion-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
 
-    updateMintedCount();
-    setInterval(updateMintedCount, 15000);
-  </script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with animation classes
+        document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
+        // Initialize
+        updateMintedCount();
+        setInterval(updateMintedCount, 15000);
+    </script>
 </body>
 </html>
