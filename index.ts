@@ -33,17 +33,17 @@ app.use(
     PAY_TO,
     {
       "GET /api/mint": { 
-        price: "$1.5", 
+        price: "$0.5", 
         network: "base",
         config: { description: "Mint 1 x402y00ts!" }
       },
       "GET /api/mint-10": { 
-        price: "$15", 
+        price: "$5", 
         network: "base",
         config: { description: "Mint 10 x402y00ts!" }
       },
       "GET /api/mint-20": { 
-        price: "$30", 
+        price: "$10", 
         network: "base",
         config: { description: "Mint 20 x402y00ts!" }
       },
